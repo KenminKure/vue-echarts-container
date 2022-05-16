@@ -1,0 +1,22 @@
+{
+  "name": "vue-echarts-container",
+  "version": "0.0.1",
+  "description": "一个包装 ECharts 的简单 Vue 2 组件",
+  "main": "index.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KenminKure/vue-echarts-container.git"
+  },
+  "author": "KenminKure",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KenminKure/vue-echarts-container/issues"
+  },
+  "homepage": "https://github.com/KenminKure/vue-echarts-container#readme",
+  "dependencies": {
+    "echarts": "^5.3.2"
+  }
+}
