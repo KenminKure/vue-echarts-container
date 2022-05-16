@@ -28,7 +28,13 @@ export default {
   },
   computed: {
     style() {
-      return Object.assign({}, this.size);
+      return Object.assign(
+        {
+          width: "auto",
+          height: "400px",
+        },
+        this.size
+      );
     },
   },
   watch: {
