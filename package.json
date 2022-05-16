@@ -1,6 +1,6 @@
 {
   "name": "vue-echarts-container",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "一个包装 ECharts 的简单 Vue 2 组件",
   "main": "index.vue",
   "scripts": {
