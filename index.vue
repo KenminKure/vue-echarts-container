@@ -7,10 +7,7 @@ export default {
     size: {
       type: Object,
       default() {
-        return {
-          width: "auto",
-          height: "400px",
-        };
+        return {};
       },
     },
     option: {
@@ -28,13 +25,7 @@ export default {
   },
   computed: {
     style() {
-      return Object.assign(
-        {
-          width: "auto",
-          height: "400px",
-        },
-        this.size
-      );
+      return Object.assign({}, this.size);
     },
   },
   watch: {
@@ -73,4 +64,9 @@ export default {
   <div ref="container" class="echarts-container" :style="style"></div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.echarts-container {
+  width: auto;
+  height: 300px;
+}
+</style>
