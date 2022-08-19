@@ -1,7 +1,7 @@
 {
   "name": "vue-echarts-container",
-  "version": "0.0.3",
-  "description": "一个包装 ECharts 的简单 Vue 2 组件",
+  "version": "0.0.4",
+  "description": "A simple Vue component for ECharts",
   "main": "index.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

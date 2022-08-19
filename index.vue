@@ -1,15 +1,13 @@
+<template>
+  <div ref="container" class="echarts-container"></div>
+</template>
+
 <script>
 import * as echarts from "echarts";
 
 export default {
   name: "Chart",
   props: {
-    size: {
-      type: Object,
-      default() {
-        return {};
-      },
-    },
     option: {
       type: Object,
       default() {
@@ -23,11 +21,7 @@ export default {
       resizeObserver: null,
     };
   },
-  computed: {
-    style() {
-      return Object.assign({}, this.size);
-    },
-  },
+  computed: {},
   watch: {
     option: {
       handler(newValue) {
@@ -60,13 +54,4 @@ export default {
 };
 </script>
 
-<template>
-  <div ref="container" class="echarts-container" :style="style"></div>
-</template>
-
-<style lang="scss" scoped>
-.echarts-container {
-  width: auto;
-  height: 300px;
-}
-</style>
+<style lang="scss" scoped></style>

@@ -1,23 +1,21 @@
 # vue-echarts-container
 
-一个包装 ECharts 的简单 Vue 2 组件，可自适应元素容器大小。
+一个包装 ECharts 的简单 Vue 组件，可监听容器尺寸变化执行 `echartsInstance.resize` 方法改变图标尺寸。
 
 ## Props
 
-### size
-
-type: Object
-
-default: `{ width: "auto", height: "300px" }`
-
-设置表格大小。默认 `height` 为 `300px`。
-
 ### option
 
-type: Object
+设置图表实例的配置项以及数据，作为第一个参数传入 ECharts 的 `echartsInstance.setOption` 方法。具体可参见：<https://echarts.apache.org/zh/api.html#echartsInstance.setOption>
 
-default: `null`
+#### type
 
-设置图表实例的配置项以及数据，作为第一个参数传入 ECharts 的 setOption()。
+Object
 
-参见：<https://echarts.apache.org/zh/api.html#echartsInstance.setOption>
+#### default
+
+`null`
+
+## License
+
+[MIT](./LICENSE)
