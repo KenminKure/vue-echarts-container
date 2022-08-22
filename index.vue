@@ -3,12 +3,11 @@
 </template>
 
 <script>
-import echarts, { EChartsOption } from "echarts";
+import echarts from "echarts";
 
 export default {
   name: "Chart",
   props: {
-    /** @type {EChartsOption} */
     option: {
       type: Object,
       default() {
