@@ -2,11 +2,11 @@
   <div ref="container" class="echarts-container"></div>
 </template>
 
-<script>
+<script lang="ts">
 import * as echarts from "echarts";
 
 export default {
-  name: "Chart",
+  name: "EchartsContainer",
   props: {
     option: {
       type: Object,
@@ -17,16 +17,21 @@ export default {
   },
   data() {
     return {
-      chart: null,
-      resizeObserver: null,
+      chart: null as echarts.ECharts | null,
+      resizeObserver: null as ResizeObserver | null,
     };
   },
   computed: {},
   watch: {
     option: {
       handler(newValue) {
-        this.chart.setOption(newValue);
+        if (this.chart) {
+          this.chart.clear();
+          this.resizeObserver?.disconnect();
+          this.handleMountedNextTick();
+        }
       },
+      deep: true,
     },
   },
   created() {},
@@ -36,18 +41,18 @@ export default {
     });
   },
   beforeDestroy() {
-    this.resizeObserver.disconnect();
+    this.resizeObserver?.disconnect();
   },
   methods: {
     handleMountedNextTick() {
       const container = this.$refs.container;
-      const chart = echarts.init(container);
+      const chart = echarts.init(container as HTMLElement);
       this.chart = chart;
       const resizeObserver = new ResizeObserver((entries) => {
         chart.resize();
       });
       this.resizeObserver = resizeObserver;
-      resizeObserver.observe(container);
+      resizeObserver.observe(container as HTMLElement);
       if (this.option) chart.setOption(this.option);
     },
   },
